@@ -5,6 +5,7 @@
     * discussion boards
     * PDFs
     * Munch and mingle
+3. Setup Git & Github
 4. Get 1000 tweets. 
     * Key words: 
         - vaccine name
