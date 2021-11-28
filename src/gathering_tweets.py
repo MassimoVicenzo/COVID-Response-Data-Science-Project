@@ -1,5 +1,6 @@
 import tweepy as tw
 import os.path as op
+from os import getcwd
 import argparse as ap
 import csv
 
@@ -13,8 +14,7 @@ def parse_input():
 
     args = parser.parse_args()
 
-    script_dirname = op.dirname(__file__)
-    output_path = op.normpath(op.join(script_dirname, args.output))
+    output_path = op.normpath(op.join(getcwd(), args.output))
 
     return [args.bearer, output_path]
 
@@ -68,7 +68,6 @@ def main():
     api = setup_auth(bearer)
     tweets = collect_tweets(api) 
     extract_and_format(tweets,out_path)
-
 
 if __name__ == '__main__':
     main()
