@@ -17,7 +17,7 @@ def parse_input():
 
     output_path = op.normpath(op.join(getcwd(), args.output))
 
-    return [args.bearer, output_path]
+    return args.bearer, output_path
 
 def setup_auth(bearer):
     
@@ -66,7 +66,7 @@ def extract_and_format(tweets, out_path):
 
 
 def main():
-    [bearer, out_path] = parse_input()
+    bearer, out_path = parse_input()
     api = setup_auth(bearer)
     tweets = collect_tweets(api) 
     extract_and_format(tweets,out_path)
