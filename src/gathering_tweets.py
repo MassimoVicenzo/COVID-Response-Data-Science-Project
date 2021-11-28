@@ -3,6 +3,7 @@ import os.path as op
 from os import getcwd
 import argparse as ap
 import csv
+import html
 
 #Change this list if you want to look for different words
 KEYWORDS = ["vaccine","vaccination","COVID","pandemic","outbreak","virus","Pfizer","BioNTech","Moderna"]
@@ -53,7 +54,8 @@ def extract_and_format(tweets, out_path):
         writer.writerow(['id','text','retweet_count','reply_count','like_count'])
         for tweet in tweets.data:
             arr = [
-                tweet.id,tweet.text,
+                tweet.id, 
+                html.unescape(tweet.text),
                 tweet.public_metrics['retweet_count'],
                 tweet.public_metrics['reply_count'],
                 tweet.public_metrics['like_count']
