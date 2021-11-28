@@ -38,11 +38,16 @@ def collect_tweets(api):
     query = '(' + ' OR '.join(KEYWORDS) + ')' + query #LIMIT OF 512 CHARACTERS FOR THE BASIC ACCOUNT
     
     #Currently we are grabbing the id, text, and metrics like replies and likes
-    tweets = api.search_recent_tweets(query=query, max_results=100,tweet_fields=["id","text","public_metrics"]) #tweet.fields=organic_metrics
+    tweets = tw.Paginator(
+        api.search_recent_tweets, 
+        query=query, 
+        max_results=100,
+        tweet_fields=["id","text","public_metrics"]
+    ).flatten(limit=1000)
     
     print("Finished collecting tweets")
 
-    return tweets
+    return tweets #generator of tweepy.tweet.Tweet objects
 
 def extract_and_format(tweets, out_path):
     
@@ -52,14 +57,14 @@ def extract_and_format(tweets, out_path):
     with open(out_path,'w', newline='',encoding="utf-8") as f:
         writer = csv.writer(f)
         writer.writerow(['id','text','retweet_count','reply_count','like_count'])
-        for tweet in tweets.data:
+        for tweet in tweets:
             arr = [
                 tweet.id, 
                 html.unescape(tweet.text),
                 tweet.public_metrics['retweet_count'],
                 tweet.public_metrics['reply_count'],
                 tweet.public_metrics['like_count']
-                ]
+            ]
             writer.writerow(arr)
 
     print("Outputed CSV file")
@@ -69,7 +74,7 @@ def main():
     bearer, out_path = parse_input()
     api = setup_auth(bearer)
     tweets = collect_tweets(api) 
-    extract_and_format(tweets,out_path)
+    extract_and_format(tweets, out_path)
 
 if __name__ == '__main__':
     main()
