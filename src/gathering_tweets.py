@@ -10,8 +10,8 @@ KEYWORDS = ["vaccine","vaccination","COVID","pandemic","outbreak","virus","Pfize
 
 def parse_input():
     parser = ap.ArgumentParser()
-    parser.add_argument('-b', '--bearer')
-    parser.add_argument('-o', '--output')
+    parser.add_argument('-b', '--bearer', required=True)
+    parser.add_argument('-o', '--output', required=True)
 
     args = parser.parse_args()
 
