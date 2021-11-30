@@ -6,7 +6,7 @@ import csv
 import html
 
 #Change this list if you want to look for different words
-KEYWORDS = ["vaccine","vaccination","COVID","pandemic","outbreak","virus","Pfizer","BioNTech","Moderna"]
+KEYWORDS = ["vaccine","vaccination","Pfizer","BioNTech","Moderna","Vax","Janssen"]
 
 def parse_input():
     parser = ap.ArgumentParser()
@@ -34,7 +34,7 @@ def collect_tweets(api):
     print("Collecting tweets")
 
     #Using the keywords array, we search for them in english non-retweet tweets
-    query = " lang:en -is:retweet -is:reply"
+    query = "-England -Britain -UK lang:en -is:retweet -is:reply"
     query = '(' + ' OR '.join(KEYWORDS) + ')' + query #LIMIT OF 512 CHARACTERS FOR THE BASIC ACCOUNT
     
     #Currently we are grabbing the id, text, and metrics like replies and likes
