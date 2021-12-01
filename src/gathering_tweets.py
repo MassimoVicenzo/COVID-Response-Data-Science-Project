@@ -45,7 +45,7 @@ def build_query(keywords):
     query = f"({query})"
     query += ' lang:en'
     query += ' -is:quote -is:retweet -is:reply'
-    query += ' -England -Britain -UK'
+    #query += ' -England -Britain -UK'
     if len(query) > 512:
         raise ValueError(f"Query of length {len(query)} > 512 too long for api basic account.")
     return query
