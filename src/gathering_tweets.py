@@ -6,7 +6,7 @@ import csv
 import html
 
 #Change this list if you want to look for different words
-KEYWORDS = ["vaccine","vaccination","Pfizer","BioNTech","Moderna","Vax","Janssen"]
+KEYWORDS = ["vaccine","vaccination","vaccinating", "vaccinated","Pfizer","BioNTech","Moderna","Vax","Janssen"]
 
 def parse_input():
     parser = ap.ArgumentParser()
@@ -34,7 +34,7 @@ def collect_tweets(api):
     print("Collecting tweets")
 
     #Using the keywords array, we search for them in english non-retweet tweets
-    query = "-England -Britain -UK lang:en -is:retweet -is:reply"
+    query = " -England -Britain -UK lang:en -is:quote -is:retweet -is:reply"
     query = '(' + ' OR '.join(KEYWORDS) + ')' + query #LIMIT OF 512 CHARACTERS FOR THE BASIC ACCOUNT
     
     #Currently we are grabbing the id, text, and metrics like replies and likes
@@ -56,7 +56,7 @@ def extract_and_format(tweets, out_path):
     #Here we grab the information we need from the tweets we scraped
     with open(out_path,'w', newline='',encoding="utf-8") as f:
         writer = csv.writer(f)
-        writer.writerow(['id','text','retweet_count','reply_count','like_count'])
+        writer.writerow(['id','text','retweet_count','reply_count','like_count','topic','reception'])
         for tweet in tweets:
             arr = [
                 tweet.id, 
