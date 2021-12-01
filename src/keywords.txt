@@ -1,19 +1,35 @@
-//Change this list if you want to look for different words
-//Case insensitive, ignores diacritics
-//Exact word matches (note: hyphen counts as word character)
-//Emojis are accepted
-//Comments cannot have any characters before //
-//Keywords with special characters (eg ampersand) must be in double quotes
-//Keywords with multiple words must be in double quotes
+// Change this list if you want to look for different words
+// Case insensitive, ignores diacritics
+// Exact word matches (note: hyphen counts as word character)
+// Emojis are accepted
+// Comments cannot have any characters before //
+// Keywords with special characters (eg ampersand) must be in double quotes
+// Keywords with multiple words must be in double quotes
+//
+//
+// Related words
 vaccine
 vaccination
 vaccinating
 vaccinated
+💉
+covid shot
+covid booster
+jab -flu
+//
+//
+// Manufacturers / brands
 Pfizer
 BioNTech
 Moderna
 Vax
 vaxxed
+novavax -NVAX
+covishield
+covaxin
+sinopharm
+sinovac
+coronavac
 Janssen
 "Johnson and Johnson"
 "Johnson & Johnson"
@@ -21,4 +37,3 @@ Janssen
 "J&J"
 "J & J"
 "J and J"
-💉
