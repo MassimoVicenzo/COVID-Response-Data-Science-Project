@@ -31,7 +31,7 @@ def setup_auth(bearer):
 
 def collect_keywords(path):
     keywords = []
-    with open(path, 'r') as f:
+    with open(path, 'r', encoding='utf-8') as f:
         for line in f.readlines():
             if line[:2] != '//': 
                 keywords.append(line)
