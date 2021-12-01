@@ -4,6 +4,7 @@
 //Emojis are accepted
 //Comments cannot have any characters before //
 //Keywords with special characters (eg ampersand) must be in double quotes
+//Keywords with multiple words must be in double quotes
 vaccine
 vaccination
 vaccinating
@@ -14,10 +15,10 @@ Moderna
 Vax
 vaxxed
 Janssen
-Johnson and Johnson
+"Johnson and Johnson"
 "Johnson & Johnson"
 "Johnson&Johnson"
 "J&J"
 "J & J"
-J and J
+"J and J"
 💉
