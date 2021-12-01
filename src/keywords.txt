@@ -1,0 +1,14 @@
+//Change this list if you want to look for different words
+//Case insensitive, ignores diacritics
+//Exact word matches (note: hyphen counts as word character)
+//Emojis are accepted
+//Comments cannot have any characters before //
+vaccine
+vaccination
+vaccinating
+vaccinated
+Pfizer
+BioNTech
+Moderna
+Vax
+Janssen

@@ -5,19 +5,18 @@ import argparse as ap
 import csv
 import html
 
-#Change this list if you want to look for different words
-KEYWORDS = ["vaccine","vaccination","vaccinating", "vaccinated","Pfizer","BioNTech","Moderna","Vax","Janssen"]
-
 def parse_input():
     parser = ap.ArgumentParser()
     parser.add_argument('-b', '--bearer', required=True)
+    parser.add_argument('-k', '--keywords', required=True)
     parser.add_argument('-o', '--output', required=True)
 
     args = parser.parse_args()
 
+    keywords_path = path = op.normpath(op.join(getcwd(), args.keywords))
     output_path = op.normpath(op.join(getcwd(), args.output))
 
-    return args.bearer, output_path
+    return args.bearer, keywords_path, output_path
 
 def setup_auth(bearer):
     
@@ -29,13 +28,33 @@ def setup_auth(bearer):
 
     return client
 
-def collect_tweets(api):
+
+def collect_keywords(path):
+    keywords = []
+    with open(path, 'r') as f:
+        for line in f.readlines():
+            if line[:2] != '//': 
+                keywords.append(line)
+    return keywords
+
+def build_query(keywords):
+    #Using the keywords array, we will search for them in english non-retweet tweets
+    #LIMIT OF 512 CHARACTERS FOR THE BASIC ACCOUNT
+    query = ' OR '.join(keywords)
+    query = f"({query})"
+    query += ' lang:en'
+    query += ' -is:quote -is:retweet -is:reply'
+    query += ' -England -Britain -UK'
+    if len(query) > 512:
+        raise ValueError(f"Query of length {len(query)} > 512 too long for api basic account.")
+    return query
+
+
+def collect_tweets(api, keywords):
 
     print("Collecting tweets")
 
-    #Using the keywords array, we search for them in english non-retweet tweets
-    query = " -England -Britain -UK lang:en -is:quote -is:retweet -is:reply"
-    query = '(' + ' OR '.join(KEYWORDS) + ')' + query #LIMIT OF 512 CHARACTERS FOR THE BASIC ACCOUNT
+    query = build_query(keywords)
     
     #Currently we are grabbing the id, text, and metrics like replies and likes
     tweets = tw.Paginator(
@@ -71,9 +90,10 @@ def extract_and_format(tweets, out_path):
 
 
 def main():
-    bearer, out_path = parse_input()
+    bearer, keywords_path, out_path = parse_input()
     api = setup_auth(bearer)
-    tweets = collect_tweets(api) 
+    keywords = collect_keywords(keywords_path)
+    tweets = collect_tweets(api, keywords) 
     extract_and_format(tweets, out_path)
 
 if __name__ == '__main__':
