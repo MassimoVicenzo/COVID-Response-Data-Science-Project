@@ -3,6 +3,7 @@
 //Exact word matches (note: hyphen counts as word character)
 //Emojis are accepted
 //Comments cannot have any characters before //
+//Keywords with special characters (eg ampersand) must be in double quotes
 vaccine
 vaccination
 vaccinating
@@ -11,4 +12,12 @@ Pfizer
 BioNTech
 Moderna
 Vax
+vaxxed
 Janssen
+Johnson and Johnson
+"Johnson & Johnson"
+"Johnson&Johnson"
+"J&J"
+"J & J"
+J and J
+💉
