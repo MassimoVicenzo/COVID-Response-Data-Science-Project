@@ -10,13 +10,14 @@ def parse_input():
     parser.add_argument('-b', '--bearer', required=True)
     parser.add_argument('-k', '--keywords', required=True)
     parser.add_argument('-o', '--output', required=True)
+    parser.add_argument('-n', '--number-of-tweets', default=1000)
 
     args = parser.parse_args()
 
     keywords_path = path = op.normpath(op.join(getcwd(), args.keywords))
     output_path = op.normpath(op.join(getcwd(), args.output))
 
-    return args.bearer, keywords_path, output_path
+    return args.bearer, keywords_path, output_path, int(args.number_of_tweets)
 
 def setup_auth(bearer):
     
@@ -50,7 +51,7 @@ def build_query(keywords):
     return query
 
 
-def collect_tweets(api, keywords):
+def collect_tweets(api, keywords, n):
 
     print("Collecting tweets")
 
@@ -62,7 +63,7 @@ def collect_tweets(api, keywords):
         query=query, 
         max_results=100,
         tweet_fields=["id","text","public_metrics"]
-    ).flatten(limit=1000)
+    ).flatten(limit=n)
     
     print("Finished collecting tweets")
 
@@ -90,10 +91,10 @@ def extract_and_format(tweets, out_path):
 
 
 def main():
-    bearer, keywords_path, out_path = parse_input()
+    bearer, keywords_path, out_path, n = parse_input()
     api = setup_auth(bearer)
     keywords = collect_keywords(keywords_path)
-    tweets = collect_tweets(api, keywords) 
+    tweets = collect_tweets(api, keywords, n) 
     extract_and_format(tweets, out_path)
 
 if __name__ == '__main__':
