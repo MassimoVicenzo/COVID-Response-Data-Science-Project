@@ -1,0 +1,12 @@
+#unittest?
+    # with open(path, 'r', encoding='utf-8') as f:
+    #     reader = csv.reader(f)
+    #     header = next(reader)
+    #     for row in reader:
+    #         try:
+    #             id = row[0]
+    #             if len(id) != 19: raise ValueError
+    #             int(id)
+    #         except ValueError:
+    #             print(id)
+    #         if row[0] == '1465059617780625410': print(row[1][1])
