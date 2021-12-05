@@ -2,16 +2,16 @@
     "total": 1000,
     "scientific": {
         "news": {
-            "count": 139,
-            "retweet_count": 20,
-            "reply_count": 15,
+            "count": 140,
+            "retweet_count": 21,
+            "reply_count": 16,
             "like_count": 27,
-            "retweet_sum": 106,
-            "reply_sum": 78,
+            "retweet_sum": 107,
+            "reply_sum": 79,
             "like_sum": 314,
             "pos_reception": 33,
             "neu_reception": 70,
-            "neg_reception": 36
+            "neg_reception": 37
         },
         "reaction": {
             "count": 102,
@@ -64,15 +64,15 @@
             "neg_reception": 79
         },
         "opinion": {
-            "count": 227,
+            "count": 228,
             "retweet_count": 24,
             "reply_count": 32,
-            "like_count": 71,
+            "like_count": 72,
             "retweet_sum": 55,
             "reply_sum": 61,
-            "like_sum": 346,
+            "like_sum": 351,
             "pos_reception": 89,
-            "neu_reception": 45,
+            "neu_reception": 46,
             "neg_reception": 92
         }
     },
