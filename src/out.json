@@ -1,0 +1,117 @@
+{
+    "total": 1000,
+    "scientific": {
+        "news": {
+            "count": 139,
+            "retweet_count": 20,
+            "reply_count": 15,
+            "like_count": 27,
+            "retweet_sum": 106,
+            "reply_sum": 78,
+            "like_sum": 314,
+            "pos_reception": 33,
+            "neu_reception": 70,
+            "neg_reception": 36
+        },
+        "reaction": {
+            "count": 102,
+            "retweet_count": 23,
+            "reply_count": 15,
+            "like_count": 30,
+            "retweet_sum": 60,
+            "reply_sum": 21,
+            "like_sum": 146,
+            "pos_reception": 31,
+            "neu_reception": 15,
+            "neg_reception": 56
+        },
+        "opinion": {
+            "count": 150,
+            "retweet_count": 17,
+            "reply_count": 21,
+            "like_count": 42,
+            "retweet_sum": 89,
+            "reply_sum": 55,
+            "like_sum": 427,
+            "pos_reception": 64,
+            "neu_reception": 11,
+            "neg_reception": 75
+        }
+    },
+    "political": {
+        "news": {
+            "count": 203,
+            "retweet_count": 35,
+            "reply_count": 22,
+            "like_count": 43,
+            "retweet_sum": 102,
+            "reply_sum": 56,
+            "like_sum": 214,
+            "pos_reception": 43,
+            "neu_reception": 126,
+            "neg_reception": 34
+        },
+        "reaction": {
+            "count": 137,
+            "retweet_count": 18,
+            "reply_count": 19,
+            "like_count": 28,
+            "retweet_sum": 67,
+            "reply_sum": 51,
+            "like_sum": 198,
+            "pos_reception": 28,
+            "neu_reception": 30,
+            "neg_reception": 79
+        },
+        "opinion": {
+            "count": 227,
+            "retweet_count": 24,
+            "reply_count": 32,
+            "like_count": 71,
+            "retweet_sum": 55,
+            "reply_sum": 61,
+            "like_sum": 346,
+            "pos_reception": 89,
+            "neu_reception": 45,
+            "neg_reception": 92
+        }
+    },
+    "economical": {
+        "news": {
+            "count": 22,
+            "retweet_count": 2,
+            "reply_count": 1,
+            "like_count": 3,
+            "retweet_sum": 9,
+            "reply_sum": 3,
+            "like_sum": 46,
+            "pos_reception": 3,
+            "neu_reception": 11,
+            "neg_reception": 8
+        },
+        "reaction": {
+            "count": 4,
+            "retweet_count": 1,
+            "reply_count": 1,
+            "like_count": 1,
+            "retweet_sum": 1,
+            "reply_sum": 1,
+            "like_sum": 6,
+            "pos_reception": 1,
+            "neu_reception": 1,
+            "neg_reception": 2
+        },
+        "opinion": {
+            "count": 14,
+            "retweet_count": 1,
+            "reply_count": 1,
+            "like_count": 3,
+            "retweet_sum": 1,
+            "reply_sum": 1,
+            "like_sum": 4,
+            "pos_reception": 3,
+            "neu_reception": 3,
+            "neg_reception": 8
+        }
+    }
+}
