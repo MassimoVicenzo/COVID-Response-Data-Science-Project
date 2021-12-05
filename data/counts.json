@@ -26,14 +26,14 @@
             "neg_reception": 56
         },
         "opinion": {
-            "count": 150,
+            "count": 151,
             "retweet_count": 17,
-            "reply_count": 21,
-            "like_count": 42,
+            "reply_count": 22,
+            "like_count": 43,
             "retweet_sum": 89,
-            "reply_sum": 55,
-            "like_sum": 427,
-            "pos_reception": 64,
+            "reply_sum": 56,
+            "like_sum": 428,
+            "pos_reception": 65,
             "neu_reception": 11,
             "neg_reception": 75
         }
@@ -64,13 +64,13 @@
             "neg_reception": 79
         },
         "opinion": {
-            "count": 228,
+            "count": 227,
             "retweet_count": 24,
             "reply_count": 32,
-            "like_count": 72,
+            "like_count": 71,
             "retweet_sum": 55,
             "reply_sum": 61,
-            "like_sum": 351,
+            "like_sum": 349,
             "pos_reception": 89,
             "neu_reception": 46,
             "neg_reception": 92
