@@ -1,0 +1,22 @@
+{
+    "avg_amount_of_pos_reception_by_content": {
+        "opinion": 0.4,
+        "reaction": 0.25,
+        "news": 0.22
+    },
+    "avg_amount_of_neu_reception_by_content": {
+        "news": 0.57,
+        "reaction": 0.19,
+        "opinion": 0.15
+    },
+    "avg_amount_of_neg_reception_by_content": {
+        "reaction": 0.56,
+        "opinion": 0.45,
+        "news": 0.22
+    },
+    "avg_reception_by_content": {
+        "news": 0.0,
+        "opinion": -0.05,
+        "reaction": -0.32
+    }
+}

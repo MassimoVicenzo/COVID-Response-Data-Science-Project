@@ -1,0 +1,32 @@
+{
+    "avg_like_by_content": {
+        "opinion": 1.99,
+        "news": 1.57,
+        "reaction": 1.44
+    },
+    "avg_like_by_content_non_zero": {
+        "news": 7.86,
+        "opinion": 6.68,
+        "reaction": 5.93
+    },
+    "avg_reply_by_content": {
+        "news": 0.38,
+        "reaction": 0.3,
+        "opinion": 0.3
+    },
+    "avg_reply_by_content_non_zero": {
+        "news": 3.54,
+        "opinion": 2.15,
+        "reaction": 2.09
+    },
+    "avg_retweet_by_content": {
+        "news": 0.6,
+        "reaction": 0.53,
+        "opinion": 0.37
+    },
+    "avg_retweet_by_content_non_zero": {
+        "news": 3.76,
+        "opinion": 3.45,
+        "reaction": 3.05
+    }
+}
