@@ -1,0 +1,13 @@
+{
+    "%_tweets_by_topic": {
+        "political opinion": 22.7,
+        "political news": 20.3,
+        "scientific opinion": 15.1,
+        "scientific news": 14.0,
+        "political reaction": 13.7,
+        "scientific reaction": 10.2,
+        "economical news": 2.2,
+        "economical opinion": 1.4,
+        "economical reaction": 0.4
+    }
+}

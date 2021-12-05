@@ -1,0 +1,46 @@
+{
+    "avg_amount_of_pos_reception_by_topic": {
+        "scientific opinion": 0.43,
+        "political opinion": 0.39,
+        "scientific reaction": 0.3,
+        "economical reaction": 0.25,
+        "scientific news": 0.24,
+        "political news": 0.21,
+        "economical opinion": 0.21,
+        "political reaction": 0.2,
+        "economical news": 0.14
+    },
+    "avg_amount_of_neu_reception_by_topic": {
+        "political news": 0.62,
+        "scientific news": 0.5,
+        "economical news": 0.5,
+        "economical reaction": 0.25,
+        "political reaction": 0.22,
+        "economical opinion": 0.21,
+        "political opinion": 0.2,
+        "scientific reaction": 0.15,
+        "scientific opinion": 0.07
+    },
+    "avg_amount_of_neg_reception_by_topic": {
+        "political reaction": 0.58,
+        "economical opinion": 0.57,
+        "scientific reaction": 0.55,
+        "scientific opinion": 0.5,
+        "economical reaction": 0.5,
+        "political opinion": 0.41,
+        "economical news": 0.36,
+        "scientific news": 0.26,
+        "political news": 0.17
+    },
+    "avg_reception_by_topic": {
+        "political news": 0.04,
+        "political opinion": -0.01,
+        "scientific news": -0.03,
+        "scientific opinion": -0.07,
+        "economical news": -0.23,
+        "scientific reaction": -0.25,
+        "economical reaction": -0.25,
+        "economical opinion": -0.36,
+        "political reaction": -0.37
+    }
+}
