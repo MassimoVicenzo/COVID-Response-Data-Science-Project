@@ -15,18 +15,25 @@ def parse_input():
     parser = ap.ArgumentParser()
     parser.add_argument('-i', '--inpath', required=True)
     parser.add_argument('-o', '--outpath', required=True)
+    parser.add_argument('-w', '--stopwordspath', required=True)
 
     args = parser.parse_args()
 
     inpath = op.normpath(op.join(getcwd(), args.inpath))
     outpath = op.normpath(op.join(getcwd(), args.outpath))
+    stopwordspath = op.normpath(op.join(getcwd(), args.stopwordspath))
 
-    return inpath, outpath
+    return inpath, outpath, stopwordspath
 
 def load(path):
     with open(path, 'r', encoding='utf-8') as f:
         df = pd.read_csv(path, index_col='id', usecols=['id', 'text', 'topic'])
     return df
+
+def load_stopwords(path):
+    with open(path) as f:
+        stopwords = f.read().split('\n')[6:]
+    return set(stopwords)
 
 def combine_topics(df, sep):
     groups = df.groupby(['topic'])
@@ -35,21 +42,24 @@ def combine_topics(df, sep):
     return df2['document'].rename('documents')
     
 
-def is_unwanted_token(token):
+def is_unwanted_token(token, stopwords):
     return token.is_space \
         or token.is_stop \
         or token.is_punct \
         or token.like_num \
         or token.like_url \
         or token.like_email \
-        or token.is_currency
+        or token.is_currency \
+        or token._.is_emoji \
+        or '\uFE0F' in token.text \
+        or token.lemma_ in stopwords
 
-def get_lemmas(text):
+def get_lemmas(text, stopwords):
     doc = nlp(text)
-    return [word.lemma_ for word in doc if not is_unwanted_token(word)]
+    return [token.lemma_ for token in doc if not is_unwanted_token(token, stopwords)]
 
-def process(ser):
-    return ser.apply(get_lemmas)
+def process(ser, stopwords):
+    return ser.apply(lambda x: get_lemmas(x, stopwords))
 
 def get_counts(ser):
     return ser.apply(Counter)
@@ -81,10 +91,11 @@ def write(outpath, df):
         df.to_csv(f)
 
 def main():
-    inpath, outpath = parse_input()
+    inpath, outpath, stopwordspath = parse_input()
     df_tweets = load(inpath)
+    stopwords = load_stopwords(stopwordspath)
     ser_docs = combine_topics(df_tweets, '\n\n\n')
-    ser_lemmas = process(ser_docs)
+    ser_lemmas = process(ser_docs, stopwords)
     ser_counts = get_counts(ser_lemmas)
     df_tfidfs = get_tfidfs(ser_counts)
     write(outpath, df_tfidfs)
