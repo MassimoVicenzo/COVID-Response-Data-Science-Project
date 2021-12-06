@@ -10,6 +10,7 @@ from math import log
 nlp = spacy.load("en_core_web_sm")
 nlp.add_pipe("emoji", first=True)
 
+
 def parse_input():
     parser = ap.ArgumentParser()
     parser.add_argument('-i', '--inpath', required=True)
@@ -24,14 +25,14 @@ def parse_input():
 
 def load(path):
     with open(path, 'r', encoding='utf-8') as f:
-        df = pd.read_csv(path)
+        df = pd.read_csv(path, index_col='id', usecols=['id', 'text', 'topic'])
     return df
 
 def combine_topics(df, sep):
     groups = df.groupby(['topic'])
     df['document'] = df.groupby(['topic'])['text'].transform(lambda x: sep.join(x))
     df2 = df[['topic', 'document']].drop_duplicates().set_index('topic')
-    return df2['document']
+    return df2['document'].rename('documents')
     
 
 def is_unwanted_token(token):
@@ -50,41 +51,43 @@ def get_lemmas(text):
 def process(ser):
     return ser.apply(get_lemmas)
 
-def get_tfs(ser):
+def get_counts(ser):
     return ser.apply(Counter)
 
-def get_all_words(lists_of_words):
-    raise NotImplementedError
+def get_tfs(ser_counts):
+    df = pd.json_normalize(ser_counts)
+    df = df.fillna(0)
+    df = df.set_index(ser_counts.index)
+    return df
+
+def get_bag_of_words(ser_counts): #TODO make lowercase & remove repeats
+    return set(word for words in ser_counts for word in words)
     
-def get_idf(word, ser):
-    return log(len(ser) / ser.apply(lambda x: int(word in x)).sum())
+def get_idf(word, ser_counts):
+    return log(len(ser_counts) / ser_counts.apply(lambda x: int(word in x)).sum())
 
-def get_bag_of_words(ser):
-    return set(word for words in ser for word in words)
-
-def get_idfs(word, ser):
-    words = get_bag_of_words(ser)
+def get_idfs(ser_counts):
+    words = get_bag_of_words(ser_counts)
+    idfs = {word:get_idf(word, ser_counts) for word in words}
+    return pd.Series(idfs).rename('idfs')
     
-list(zip(*aaah.items()))
-
-
+def get_tfidfs(ser_counts):
+    tfs = get_tfs(ser_counts)
+    idfs = get_idfs(ser_counts)
+    return (tfs * idfs).transpose()
     
-def write(path, header, rows):
-    with open(path, 'w', newline='', encoding='utf-8') as f:
-        writer = csv.writer(f)
-        writer.writerow(header)
-        for row in rows:
-            text = row[1]
-            text = '\n'.join(text.splitlines())
-            writer.writerow(row[:1] + [text] + row[2:])
+def write(outpath, df):
+    with open(outpath, 'w', newline='', encoding='utf-8') as f:
+        df.to_csv(f)
 
 def main():
     inpath, outpath = parse_input()
     df_tweets = load(inpath)
     ser_docs = combine_topics(df_tweets, '\n\n\n')
-    process(ser)
-
-
+    ser_lemmas = process(ser_docs)
+    ser_counts = get_counts(ser_lemmas)
+    df_tfidfs = get_tfidfs(ser_counts)
+    write(outpath, df_tfidfs)
 
 if __name__ == '__main__':
     main()
