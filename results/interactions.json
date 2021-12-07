@@ -1,0 +1,68 @@
+{
+    "avg_like_by_topic": {
+        "scientific opinion": 2.83,
+        "scientific news": 2.24,
+        "economical news": 2.09,
+        "political opinion": 1.54,
+        "economical reaction": 1.5,
+        "political reaction": 1.45,
+        "scientific reaction": 1.43,
+        "political news": 1.05,
+        "economical opinion": 0.29
+    },
+    "avg_like_by_topic_non_zero": {
+        "economical news": 15.33,
+        "scientific news": 11.63,
+        "scientific opinion": 9.95,
+        "political reaction": 7.07,
+        "economical reaction": 6.0,
+        "political news": 4.98,
+        "political opinion": 4.92,
+        "scientific reaction": 4.87,
+        "economical opinion": 1.33
+    },
+    "avg_reply_by_topic": {
+        "scientific news": 0.56,
+        "scientific opinion": 0.37,
+        "political reaction": 0.37,
+        "political news": 0.28,
+        "political opinion": 0.27,
+        "economical reaction": 0.25,
+        "scientific reaction": 0.21,
+        "economical news": 0.14,
+        "economical opinion": 0.07
+    },
+    "avg_reply_by_topic_non_zero": {
+        "scientific news": 4.94,
+        "economical news": 3.0,
+        "political reaction": 2.68,
+        "scientific opinion": 2.55,
+        "political news": 2.55,
+        "political opinion": 1.91,
+        "scientific reaction": 1.4,
+        "economical reaction": 1.0,
+        "economical opinion": 1.0
+    },
+    "avg_retweet_by_topic": {
+        "scientific news": 0.76,
+        "scientific reaction": 0.59,
+        "scientific opinion": 0.59,
+        "political news": 0.5,
+        "political reaction": 0.49,
+        "economical news": 0.41,
+        "economical reaction": 0.25,
+        "political opinion": 0.24,
+        "economical opinion": 0.07
+    },
+    "avg_retweet_by_topic_non_zero": {
+        "scientific opinion": 5.24,
+        "scientific news": 5.1,
+        "economical news": 4.5,
+        "political reaction": 3.72,
+        "political news": 2.91,
+        "scientific reaction": 2.61,
+        "political opinion": 2.29,
+        "economical reaction": 1.0,
+        "economical opinion": 1.0
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "avg_amount_of_pos_reception_by_category": {
+        "scientific": 0.33,
+        "political": 0.28,
+        "economical": 0.17
+    },
+    "avg_amount_of_neu_reception_by_category": {
+        "economical": 0.38,
+        "political": 0.36,
+        "scientific": 0.24
+    },
+    "avg_amount_of_neg_reception_by_category": {
+        "economical": 0.45,
+        "scientific": 0.43,
+        "political": 0.36
+    },
+    "avg_reception_by_category": {
+        "political": -0.08,
+        "scientific": -0.1,
+        "economical": -0.28
+    }
+}

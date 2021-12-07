@@ -1,0 +1,32 @@
+{
+    "avg_like_by_category": {
+        "scientific": 2.26,
+        "economical": 1.4,
+        "political": 1.34
+    },
+    "avg_like_by_category_non_zero": {
+        "scientific": 8.88,
+        "economical": 8.0,
+        "political": 5.36
+    },
+    "avg_reply_by_category": {
+        "scientific": 0.4,
+        "political": 0.3,
+        "economical": 0.12
+    },
+    "avg_reply_by_category_non_zero": {
+        "scientific": 2.94,
+        "political": 2.3,
+        "economical": 1.67
+    },
+    "avg_retweet_by_category": {
+        "scientific": 0.65,
+        "political": 0.4,
+        "economical": 0.28
+    },
+    "avg_retweet_by_category_non_zero": {
+        "scientific": 4.2,
+        "political": 2.91,
+        "economical": 2.75
+    }
+}
