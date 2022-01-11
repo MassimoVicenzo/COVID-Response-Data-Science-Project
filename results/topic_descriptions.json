@@ -1,0 +1,116 @@
+{
+    "opinion": {
+        "scientific": [
+            "booster",
+            "collapse",
+            "fan",
+            "vaccine",
+            "UNVACCINATED",
+            "WATCHE",
+            "ill",
+            "mutate",
+            "effect",
+            "feel"
+        ],
+        "political": [
+            "booster",
+            "entire",
+            "society",
+            "hate",
+            "Covid",
+            "choose",
+            "happy",
+            "useless",
+            "vaccine",
+            "abortion"
+        ],
+        "economic": [
+            "asset",
+            "sell",
+            "supply",
+            "profit",
+            "@LumenTechCo",
+            "@WolframResearch",
+            "@daktari1",
+            "@usps",
+            "ABUS",
+            "BCpoli"
+        ]
+    },
+    "reaction": {
+        "political": [
+            "Biden",
+            "Jen",
+            "Psaki",
+            "court",
+            "THREATENING",
+            "mongering",
+            "prison",
+            "sense",
+            "vax",
+            "@news24"
+        ],
+        "scientific": [
+            "variant",
+            "person",
+            "Fauci",
+            "South",
+            "quarantine",
+            "California",
+            "booster",
+            "OmicronVarient",
+            "conference",
+            "wtf"
+        ],
+        "economic": [
+            "Business",
+            "Centene",
+            "DAM",
+            "Floridians",
+            "G20",
+            "Job",
+            "Johnson",
+            "Morgan",
+            "Stanley",
+            "UPS"
+        ]
+    },
+    "news": {
+        "scientific": [
+            "South",
+            "California",
+            "variant",
+            "Nov.",
+            "symptom",
+            "Africa",
+            "feature",
+            "booster",
+            "person",
+            "U.S."
+        ],
+        "political": [
+            "Mandate",
+            "Republicans",
+            "Biden",
+            "shutdown",
+            "Lamb",
+            "Dies",
+            "Network",
+            "government",
+            "Marcus",
+            "Government"
+        ],
+        "economic": [
+            "Guard",
+            "Lloyd",
+            "MRNA",
+            "cop",
+            "Austin",
+            "Defense",
+            "National",
+            "loss",
+            "lose",
+            "market"
+        ]
+    }
+}
