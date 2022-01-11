@@ -5,7 +5,7 @@ In November 2021, we scraped tweets on Twitter with the goal of analysing them a
 `pip install -U pip setuptools wheel`\
 `pip install -U spacy`\
 `python -m spacy download en_core_web_sm`\
-`pip install spacymoji`\
+`pip install spacymoji`
 
 ## Data
 In this folder we have `stopwords.twt`, a file which contains many irrelevant words to our analysis ("the", "of", etc.). We have different csv files, most importantly are `vaccome_tweets.csv` and `vaccome_tweets_annotated.csv` which both contain our sample of 1000 tweets, before and after our hand annotation respectively. The remaining files are contain statistics and numbers needed to compute final results.
